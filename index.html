@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>研发生产计划看板</title>
+  <link rel="stylesheet" href="styles.css?v=0929b" />
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div style="background:#16a34a;color:#fff;text-align:center;padding:10px 12px;font-size:14px;font-weight:700;">
+    正式版 · 只读看板 · 数据请改 Excel 后同步 · 导航仅三项
+  </div>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark">RD</span>
+      <div>
+        <h1>研发生产计划看板</h1>
+        <p class="subtitle">项目进度 · 齐套风险 · 计划甘特 · 只读展示</p>
+      </div>
+    </div>
+    <div class="header-meta">
+      <span id="todayLabel" class="pill">今日 —</span>
+      <button type="button" id="btnImportExcel" class="btn ghost">从 Excel 导入</button>
+      <input type="file" id="fileExcel" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden />
+      <button type="button" id="btnReloadJson" class="btn ghost">重新加载 JSON</button>
+      <button type="button" id="btnReset" class="btn ghost">重置本地修改</button>
+    </div>
+  </header>
+  <nav class="breadcrumb" id="breadcrumb"></nav>
+  <main id="app" class="app-main"><div class="loading">正在加载数据…</div></main>
+  <footer class="app-footer"><span>请用启动看板.bat（server.py）· 交期等数据仅来自 Excel 同步，网页只读</span></footer>
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js?v=0929b"></script>
+</body>
+</html>
