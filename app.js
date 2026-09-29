@@ -1,11 +1,11 @@
-/**
+﻿/**
  * 研发生产计划看板 — 静态原型
  * 路由：#/  |  #/project/:id  |  #/project/:id/bom|kit
  * （旧路由 #/.../arrival|purchase 重定向到 kit）
  */
 (function () {
   const LS_KEY = "rd-plan-board-overrides-v1";
-  const DATA_URL = "../sample-data.json";
+  const DATA_URL = "./sample-data.json";
 
   /** @type {any} */
   let DATA = null;
